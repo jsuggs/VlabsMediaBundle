@@ -47,7 +47,7 @@ class BaseFileListener implements EventSubscriberInterface
     {
         return array(
             FormEvents::PRE_SET_DATA => 'preSetData',
-            FormEvents::SUBMIT => 'submit'
+            FormEvents::BIND => 'bind'
         );
     }
 
@@ -80,7 +80,7 @@ class BaseFileListener implements EventSubscriberInterface
      *
      * @param \Symfony\Component\Form\FormEvent $event
      */
-    public function submit(FormEvent $event)
+    public function bind(FormEvent $event)
     {
         $form = $event->getForm();
 
